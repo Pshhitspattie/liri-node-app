@@ -18,10 +18,7 @@ const fs = require(`fs`);
 
 
 
-// Caputuring user command and saving total user input by looping over process.argvs
-// let nodeArgs = process.argv;
 
-// let command = process.argv[2];
 
 let arguments = process.argv;
 let input = process.argv[2];
@@ -36,7 +33,7 @@ let user = '';
         }
     }
 
-// Switch statement that runs different functions based on user commands, or displays a default message if no command is entered
+
 switch (input) {
     case 'concert-this':
         bandsInTown(user);
@@ -64,7 +61,7 @@ switch (input) {
     `)
 }
 
-// Function for concert-this command
+
 function bandsInTown(user) {
     if (!user) {
         user = `Rezz`;
@@ -93,10 +90,10 @@ function bandsInTown(user) {
     ).catch(function (error) {
         console.log(error);
     });
-} // ends concertSearch function
+} 
 
 
-// Function for movie-this command
+
 function movieInfo(user) {
     if (!user) {
         user = `Mr.+Nobody`;
@@ -121,10 +118,9 @@ function movieInfo(user) {
     ).catch(function (error) {
         console.log(error);
     });
-} // ends movieSearch function
+} 
 
 
-// Function for spotify-this-song command
 function spotSong(user) {
     if (!user) {
         user = `The Sign Ace of Base`;
@@ -149,9 +145,7 @@ function spotSong(user) {
         .catch(function (err) {
             console.log(err);
         });
-} // ends spotifySearch function
-
-// Function for do-what-it-says command
+} 
 function getRandom() {
     fs.readFile('./random.txt', 'utf8', function (error, data) {
         if (error) {
